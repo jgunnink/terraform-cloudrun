@@ -1,5 +1,5 @@
 resource "google_cloud_run_service" "terraformed_cloudrun" {
-  name     = "App 1"
+  name     = "hello-terraform"
   location = var.region
 
   template {
