@@ -14,3 +14,7 @@ Terraform to accomplish this.
 ## Apply
 
 - Run `terraform apply -var-file=dev.tfvars`
+
+## Cleanup / Destruction
+
+- Run `terraform destroy -var-file=dev.tfvars`
