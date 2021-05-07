@@ -18,6 +18,14 @@ resource "google_cloud_run_service" "terraformed_cloudrun" {
   depends_on = [google_project_service.run_api]
 }
 
+# Allow unauthenticated users to invoke the service
+resource "google_cloud_run_service_iam_member" "run_all_users" {
+  service  = google_cloud_run_service.terraformed_cloudrun.name
+  location = google_cloud_run_service.terraformed_cloudrun.location
+  role     = "roles/run.invoker"
+  member   = "allUsers"
+}
+
 # Enable the Cloud Run API
 resource "google_project_service" "run_api" {
   service = "run.googleapis.com"
