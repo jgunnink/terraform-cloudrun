@@ -1,2 +1,2 @@
 region     = "australia-southeast1"
-project_id = "" # Replace with your project
+project_id = "jkpersonal" # Replace with your project
